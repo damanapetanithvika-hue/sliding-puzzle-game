@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sliding Puzzle Game</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="label">Moves:</span>
+                <span id="moves" class="value">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Time:</span>
+                <span id="timer" class="value">0:00</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="controls">
+            <button id="newGameBtn" class="btn">New Game</button>
+            <button id="shuffleBtn" class="btn">Shuffle</button>
+            <button id="solveBtn" class="btn">Solve</button>
+        </div>
+
+        <div class="info">
+            <p id="status" class="status-message"></p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
