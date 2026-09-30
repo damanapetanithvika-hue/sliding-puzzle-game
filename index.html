@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Puzzle Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Sliding Puzzle Game</h1>
-        
-        <div class="stats">
-            <div class="stat">
-                <span class="label">Moves:</span>
-                <span id="moves" class="value">0</span>
-            </div>
-            <div class="stat">
-                <span class="label">Time:</span>
-                <span id="timer" class="value">0:00</span>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Puzzle Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="game-card">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">logic puzzle</p>
+            <h1>Sliding Puzzle</h1>
+          </div>
 
-        <div class="game-board" id="gameBoard"></div>
+          <label class="difficulty-picker" for="difficulty">
+            <span>Difficulty</span>
+            <select id="difficulty" aria-label="Select puzzle size">
+              <option value="3">3x3</option>
+              <option value="4" selected>4x4</option>
+              <option value="5">5x5</option>
+            </select>
+          </label>
+        </header>
+
+        <section class="stats" aria-label="game stats">
+          <div class="stat-box">
+            <span class="label">Moves</span>
+            <strong id="moves" class="value">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Time</span>
+            <strong id="timer" class="value">0:00</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Best</span>
+            <strong id="bestScore" class="value">--</strong>
+          </div>
+        </section>
+
+        <div id="gameBoard" class="game-board" aria-label="Sliding puzzle board"></div>
 
         <div class="controls">
-            <button id="newGameBtn" class="btn">New Game</button>
-            <button id="shuffleBtn" class="btn">Shuffle</button>
-            <button id="solveBtn" class="btn">Solve</button>
+          <button id="newGameBtn" class="btn primary">New Game</button>
+          <button id="shuffleBtn" class="btn">Shuffle</button>
+          <button id="solveBtn" class="btn tertiary">Hint</button>
         </div>
 
-        <div class="info">
-            <p id="status" class="status-message"></p>
-        </div>
+        <p id="status" class="status-message info" aria-live="polite">
+          Ready to play. Start sliding tiles!
+        </p>
+      </div>
     </div>
 
     <script src="game.js"></script>
-</body>
+  </body>
 </html>
